@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		9F4D0E962CC7C0BD00053EC5 /* ECommerceView.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9F4D0E952CC7C0BD00053EC5 /* ECommerceView.txt */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		9F1225DE2CC7B30700BCD90F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,11 +31,25 @@
 		9F1225CD2CC7B30400BCD90F /* MachiLearningApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MachiLearningApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1225DD2CC7B30700BCD90F /* MachiLearningAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MachiLearningAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1225E72CC7B30700BCD90F /* MachiLearningAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MachiLearningAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F4D0E952CC7C0BD00053EC5 /* ECommerceView.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ECommerceView.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		9F4D0E942CC7C0BD00053EC5 /* Exceptions for "MachiLearningApp" folder in "MachiLearningApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Untitled.swift,
+			);
+			target = 9F1225CC2CC7B30400BCD90F /* MachiLearningApp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		9F1225CF2CC7B30400BCD90F /* MachiLearningApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				9F4D0E942CC7C0BD00053EC5 /* Exceptions for "MachiLearningApp" folder in "MachiLearningApp" target */,
+			);
 			path = MachiLearningApp;
 			sourceTree = "<group>";
 		};
@@ -79,6 +97,7 @@
 				9F1225E02CC7B30700BCD90F /* MachiLearningAppTests */,
 				9F1225EA2CC7B30700BCD90F /* MachiLearningAppUITests */,
 				9F1225CE2CC7B30400BCD90F /* Products */,
+				9F4D0E952CC7C0BD00053EC5 /* ECommerceView.txt */,
 			);
 			sourceTree = "<group>";
 		};
@@ -212,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F4D0E962CC7C0BD00053EC5 /* ECommerceView.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
