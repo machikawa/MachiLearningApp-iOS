@@ -13,13 +13,13 @@ struct ContentView: View {
                     .resizable()
                     .scaledToFill() // 画面全体にフィットさせる
                     .edgesIgnoringSafeArea(.all) // 画面全体を覆う
-
+                
                 VStack(spacing: 20) {
                     Text("Push 学習 App")
                         .font(.largeTitle)
                         .bold()
                         .foregroundColor(.black) // テキストの色を変更して背景に合わせる
-
+                    
                     NavigationLink(destination: PostListView()) {
                         Text("投稿一覧")
                             .font(.system(size:buttonFontSize))
@@ -30,7 +30,7 @@ struct ContentView: View {
                             .foregroundColor(.white)
                             .cornerRadius(10)
                     }
-
+                    
                     NavigationLink(destination: SettingsView()) {
                         Text("設定")
                             .font(.system(size:buttonFontSize))
@@ -41,7 +41,7 @@ struct ContentView: View {
                             .foregroundColor(.white)
                             .cornerRadius(10)
                     }
-
+                    
                     NavigationLink(destination: NotificationsView()) {
                         Text("お知らせ")
                             .font(.system(size:buttonFontSize))
@@ -63,10 +63,26 @@ struct ContentView: View {
                             .foregroundColor(.white)
                             .cornerRadius(10)
                     }
-
+                    
                 }
                 .padding()
             }
         }
+        .onAppear{
+            requestPushPermissions()
+        }
     }
+    
+    func requestPushPermissions() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            if let error = error {
+                print("Error requesting push permissions: \(error.localizedDescription)")
+            } else if granted {
+                DispatchQueue.main.async {
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
+            }
+        }
+    }
+    
 }

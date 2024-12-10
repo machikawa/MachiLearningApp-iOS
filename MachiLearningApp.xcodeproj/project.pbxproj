@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9F4D0E962CC7C0BD00053EC5 /* ECommerceView.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9F4D0E952CC7C0BD00053EC5 /* ECommerceView.txt */; };
+		9FBA6E2B2CFDC6CE0034CC52 /* MarketingCloudSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 9FBA6E2A2CFDC6CE0034CC52 /* MarketingCloudSDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FBA6E2B2CFDC6CE0034CC52 /* MarketingCloudSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +100,7 @@
 				9F1225EA2CC7B30700BCD90F /* MachiLearningAppUITests */,
 				9F1225CE2CC7B30400BCD90F /* Products */,
 				9F4D0E952CC7C0BD00053EC5 /* ECommerceView.txt */,
+				9FBA6E292CFDC6CE0034CC52 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +112,13 @@
 				9F1225E72CC7B30700BCD90F /* MachiLearningAppUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9FBA6E292CFDC6CE0034CC52 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +141,7 @@
 			);
 			name = MachiLearningApp;
 			packageProductDependencies = (
+				9FBA6E2A2CFDC6CE0034CC52 /* MarketingCloudSDK */,
 			);
 			productName = MachiLearningApp;
 			productReference = 9F1225CD2CC7B30400BCD90F /* MachiLearningApp.app */;
@@ -214,6 +225,10 @@
 			);
 			mainGroup = 9F1225C42CC7B30400BCD90F;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				9FBA6E042CFDBE150034CC52 /* XCRemoteSwiftPackageReference "MarketingCloudSDK-iOS" */,
+				9FBA6E072CFDC5010034CC52 /* XCRemoteSwiftPackageReference "sfmc-sdk-ios" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9F1225CE2CC7B30400BCD90F /* Products */;
 			projectDirPath = "";
@@ -413,6 +428,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MachiLearningApp/MachiLearningApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MachiLearningApp/Preview Content\"";
@@ -442,6 +458,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MachiLearningApp/MachiLearningApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MachiLearningApp/Preview Content\"";
@@ -578,6 +595,33 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9FBA6E042CFDBE150034CC52 /* XCRemoteSwiftPackageReference "MarketingCloudSDK-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/salesforce-marketingcloud/MarketingCloudSDK-iOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.3;
+			};
+		};
+		9FBA6E072CFDC5010034CC52 /* XCRemoteSwiftPackageReference "sfmc-sdk-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/salesforce-marketingcloud/sfmc-sdk-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9FBA6E2A2CFDC6CE0034CC52 /* MarketingCloudSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9FBA6E042CFDBE150034CC52 /* XCRemoteSwiftPackageReference "MarketingCloudSDK-iOS" */;
+			productName = MarketingCloudSDK;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9F1225C52CC7B30400BCD90F /* Project object */;
 }

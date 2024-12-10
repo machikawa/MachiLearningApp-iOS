@@ -1,10 +1,12 @@
 import SwiftUI
+import MarketingCloudSDK
+import SFMCSDK
 
 struct PostCardView: View {
     let post: Post
     @State private var isLiked: Bool = false
     @State private var heartSize: CGFloat = 1.0
-
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text(post.date)
@@ -12,7 +14,7 @@ struct PostCardView: View {
                 .foregroundColor(.gray)
             Text(post.content)
                 .font(.body)
-
+            
             HStack {
                 Spacer()
                 Button(action: {
@@ -20,6 +22,7 @@ struct PostCardView: View {
                         self.isLiked.toggle()
                         self.heartSize = self.isLiked ? 1.5 : 1.0
                     }
+                    trackLikeEvent()
                 }) {
                     Image(systemName: isLiked ? "heart.fill" : "heart")
                         .resizable()
@@ -35,4 +38,21 @@ struct PostCardView: View {
         .cornerRadius(15)
         .shadow(radius: 5)
     }
+
+    // カスタムイベントをトラッキング
+    private func trackLikeEvent() {
+        let eventName = isLiked ? "LikeEvent" : "UnlikeEvent"
+        let attributes: [String: String] = [
+            "postId": "\(post.id)",
+            "postContent": post.content,
+            "liked": "\(isLiked)"
+        ]
+        if let event = CustomEvent(name: eventName, attributes: attributes) {
+            SFMCSdk.track(event: event)
+        } else {
+            print("Failed to create custom event")
+        }
+    }
+    
+    
 }
